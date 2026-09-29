@@ -1,0 +1,34 @@
+======================================================================
+DEMOSTRACIÓN POR CONSOLA - CASOS DEL TALLER 1
+======================================================================
+
+[1] Conversiones infija -> postfija / prefija
+           (A+B)*C  ->  postfija: AB+C*        prefija: *+ABC
+       (A+B)*(C-D)  ->  postfija: AB+CD-*      prefija: *+AB-CD
+       A+B*C-D/E^F  ->  postfija: ABC*+DEF^/-  prefija: -+A*BC/D^EF
+             2^3^2  ->  postfija: 232^^        prefija: ^2^32
+           (A+B)^C  ->  postfija: AB+C^        prefija: ^+ABC
+
+[2] Evaluación postfija
+         23+4*  ->  20       operaciones: 2 + 3 = 5 ; 5 * 4 = 20
+     3 4 + 2 *  ->  14       operaciones: 3 + 4 = 7 ; 7 * 2 = 14
+         82/2/  ->  2        operaciones: 8 / 2 = 4 ; 4 / 2 = 2
+       23*45*+  ->  26       operaciones: 2 * 3 = 6 ; 4 * 5 = 20 ; 6 + 20 = 26
+        2 10 ^  ->  1024     operaciones: 2 ^ 10 = 1024
+
+[3] Evaluación prefija
+         *+234  ->  20       operaciones: 2 + 3 = 5 ; 5 * 4 = 20
+     + 6 * 3 2  ->  12       operaciones: 3 * 2 = 6 ; 6 + 6 = 12
+         //822  ->  2        operaciones: 8 / 2 = 4 ; 4 / 2 = 2
+       +*23*45  ->  26       operaciones: 4 * 5 = 20 ; 2 * 3 = 6 ; 6 + 20 = 26
+        ^ 2 10  ->  1024     operaciones: 2 ^ 10 = 1024
+
+[4] Expresiones inválidas (validación y mensajes de error)
+         (A+B*  ->  ERROR: Paréntesis desbalanceados: falta cerrar 1 paréntesis de apertura (posiciones: 1).
+            +A  ->  ERROR: El operador '+' (posición 1) no tiene operando a su izquierda.
+           A B  ->  ERROR: Faltan operadores entre 'A' y 'B' (posición 2).
+       2 3 + 4  ->  ERROR: Expresión postfija incompleta: quedan 2 operandos sin operador que los consuma.
+          *+23  ->  ERROR: Expresión prefija inválida: el operador '*' (posición 4 de la secuencia) necesita 2 operandos y sólo hay 1 disponible(s).
+         5 0 /  ->  ERROR: Error aritmético: división por cero.
+
+Demostración terminada correctamente.

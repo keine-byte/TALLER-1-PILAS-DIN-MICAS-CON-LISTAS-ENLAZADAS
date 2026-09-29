@@ -1,0 +1,112 @@
+
+### TOKENS: (A+B)*C
+
+------------------------------------------------------------------
+CONVERSIÓN INFIJA -> POSTFIJA (Shunting Yard de Dijkstra)
+Tokens de entrada: ( A + B ) * C
+Nota: en las pilas se muestra primero la cima (izquierda).
+  1. token '('      -> push('(')                          | Pila operadores: [(]
+  2. operando 'A' -> salida directa                 | Salida: A
+  3. operador '+' -> push('+')                        | Pila operadores: [+, (]
+  4. operando 'B' -> salida directa                 | Salida: A B
+  5. token ')'      -> desapilar hasta encontrar '('      | Pila operadores: [+, (]
+      operador '+' sale a la salida            | Salida: A B +
+      se descarta '('                                | Pila operadores: []
+  6. operador '*' -> push('*')                        | Pila operadores: [*]
+  7. operando 'C' -> salida directa                 | Salida: A B + C
+      fin de tokens: '*' sale a la salida         | Salida: A B + C *
+RESULTADO POSTFIJO: AB+C*   (con espacios: A B + C *)
+==================================================================
+CONVERSIÓN INFIJA -> PREFIJA (notación polaca directa)
+Tokens de entrada: ( A + B ) * C
+1) Se invierten los tokens:            C * ) B + A (
+2) Se intercambian '(' y ')':          C * ( B + A )
+   (en esta pasada la asociatividad se invierte: los operadores
+    asociativos por la izquierda se comportan por la derecha y viceversa)
+3) Se aplica el algoritmo postfijo a esa secuencia:
+   ------------------------------------------------------------------
+   CONVERSIÓN INFIJA -> POSTFIJA (Shunting Yard de Dijkstra)
+   Tokens de entrada: C * ( B + A )
+   Nota: en las pilas se muestra primero la cima (izquierda).
+     1. operando 'C' -> salida directa                 | Salida: C
+     2. operador '*' -> push('*')                        | Pila operadores: [*]
+     3. token '('      -> push('(')                          | Pila operadores: [(, *]
+     4. operando 'B' -> salida directa                 | Salida: C B
+     5. operador '+' -> push('+')                        | Pila operadores: [+, (, *]
+     6. operando 'A' -> salida directa                 | Salida: C B A
+     7. token ')'      -> desapilar hasta encontrar '('      | Pila operadores: [+, (, *]
+         operador '+' sale a la salida            | Salida: C B A +
+         se descarta '('                                | Pila operadores: [*]
+         fin de tokens: '*' sale a la salida         | Salida: C B A + *
+   RESULTADO POSTFIJO: CBA+*   (con espacios: C B A + *)
+4) Se invierte el resultado intermedio: C B A + *
+RESULTADO PREFIJO: *+ABC   (con espacios: * + A B C)
+
+### TOKENS: (2+3)*4
+
+------------------------------------------------------------------
+CONVERSIÓN INFIJA -> POSTFIJA (Shunting Yard de Dijkstra)
+Tokens de entrada: ( 2 + 3 ) * 4
+Nota: en las pilas se muestra primero la cima (izquierda).
+  1. token '('      -> push('(')                          | Pila operadores: [(]
+  2. operando '2' -> salida directa                 | Salida: 2
+  3. operador '+' -> push('+')                        | Pila operadores: [+, (]
+  4. operando '3' -> salida directa                 | Salida: 2 3
+  5. token ')'      -> desapilar hasta encontrar '('      | Pila operadores: [+, (]
+      operador '+' sale a la salida            | Salida: 2 3 +
+      se descarta '('                                | Pila operadores: []
+  6. operador '*' -> push('*')                        | Pila operadores: [*]
+  7. operando '4' -> salida directa                 | Salida: 2 3 + 4
+      fin de tokens: '*' sale a la salida         | Salida: 2 3 + 4 *
+RESULTADO POSTFIJO: 23+4*   (con espacios: 2 3 + 4 *)
+==================================================================
+CONVERSIÓN INFIJA -> PREFIJA (notación polaca directa)
+Tokens de entrada: ( 2 + 3 ) * 4
+1) Se invierten los tokens:            4 * ) 3 + 2 (
+2) Se intercambian '(' y ')':          4 * ( 3 + 2 )
+   (en esta pasada la asociatividad se invierte: los operadores
+    asociativos por la izquierda se comportan por la derecha y viceversa)
+3) Se aplica el algoritmo postfijo a esa secuencia:
+   ------------------------------------------------------------------
+   CONVERSIÓN INFIJA -> POSTFIJA (Shunting Yard de Dijkstra)
+   Tokens de entrada: 4 * ( 3 + 2 )
+   Nota: en las pilas se muestra primero la cima (izquierda).
+     1. operando '4' -> salida directa                 | Salida: 4
+     2. operador '*' -> push('*')                        | Pila operadores: [*]
+     3. token '('      -> push('(')                          | Pila operadores: [(, *]
+     4. operando '3' -> salida directa                 | Salida: 4 3
+     5. operador '+' -> push('+')                        | Pila operadores: [+, (, *]
+     6. operando '2' -> salida directa                 | Salida: 4 3 2
+     7. token ')'      -> desapilar hasta encontrar '('      | Pila operadores: [+, (, *]
+         operador '+' sale a la salida            | Salida: 4 3 2 +
+         se descarta '('                                | Pila operadores: [*]
+         fin de tokens: '*' sale a la salida         | Salida: 4 3 2 + *
+   RESULTADO POSTFIJO: 432+*   (con espacios: 4 3 2 + *)
+4) Se invierte el resultado intermedio: 4 3 2 + *
+RESULTADO PREFIJO: *+234   (con espacios: * + 2 3 4)
+
+### EVALUACIÓN POSTFIJA DE 23+4* (caso del taller)
+
+------------------------------------------------------------------
+EVALUACIÓN POSTFIJA de: 2 3 + 4 *
+Se recorre la expresión de izquierda a derecha.
+Nota: en las pilas se muestra primero la cima (izquierda).
+  1. operando '2' -> push(2) | Pila: [2.0]
+  2. operando '3' -> push(3) | Pila: [3.0, 2.0]
+  3. operador '+' -> pop()=3, pop()=2 | operación: 2 + 3 = 5 | push() | Pila: [5.0]
+  4. operando '4' -> push(4) | Pila: [4.0, 5.0]
+  5. operador '*' -> pop()=4, pop()=5 | operación: 5 * 4 = 20 | push() | Pila: [20.0]
+Pila final: []  ->  Resultado final = 20  (operaciones: 2 + 3 = 5 ; 5 * 4 = 20)
+
+### EVALUACIÓN PREFIJA DE *+234 (caso del taller)
+
+------------------------------------------------------------------
+EVALUACIÓN PREFIJA de: * + 2 3 4
+Se recorre la expresión de derecha a izquierda.
+Nota: en las pilas se muestra primero la cima (izquierda).
+  1. operando '4' -> push(4) | Pila: [4.0]
+  2. operando '3' -> push(3) | Pila: [3.0, 4.0]
+  3. operando '2' -> push(2) | Pila: [2.0, 3.0, 4.0]
+  4. operador '+' -> pop()=2 (izquierdo), pop()=3 (derecho) | operación: 2 + 3 = 5 | push() | Pila: [5.0, 4.0]
+  5. operador '*' -> pop()=5 (izquierdo), pop()=4 (derecho) | operación: 5 * 4 = 20 | push() | Pila: [20.0]
+Pila final: []  ->  Resultado final = 20  (operaciones: 2 + 3 = 5 ; 5 * 4 = 20)

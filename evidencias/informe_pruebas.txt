@@ -1,0 +1,79 @@
+======================================================================
+EVIDENCIA DE PRUEBAS - TALLER 1: PILAS DINÁMICAS CON LISTAS ENLAZADAS
+======================================================================
+test_iteracion_y_representacion (pruebas.TestPilaDinamica.test_iteracion_y_representacion) ... ok
+test_limpiar_vacia_la_pila (pruebas.TestPilaDinamica.test_limpiar_vacia_la_pila) ... ok
+test_nodo_guarda_dato_y_enlace (pruebas.TestPilaDinamica.test_nodo_guarda_dato_y_enlace) ... ok
+test_peek_no_modifica_la_pila (pruebas.TestPilaDinamica.test_peek_no_modifica_la_pila) ... ok
+test_pila_crece_dinamicamente (pruebas.TestPilaDinamica.test_pila_crece_dinamicamente)
+La pila no tiene tamaño fijo: se valida con 1000 elementos. ... ok
+test_pila_nueva_esta_vacia (pruebas.TestPilaDinamica.test_pila_nueva_esta_vacia) ... ok
+test_pop_en_pila_vacia_lanza_error (pruebas.TestPilaDinamica.test_pop_en_pila_vacia_lanza_error) ... ok
+test_pop_respeta_orden_lifo (pruebas.TestPilaDinamica.test_pop_respeta_orden_lifo) ... ok
+test_push_apila_en_la_cima (pruebas.TestPilaDinamica.test_push_apila_en_la_cima) ... ok
+test_caracter_invalido (pruebas.TestTokenizacion.test_caracter_invalido) ... ok
+test_decimal_en_modo_compacto_no_es_valido (pruebas.TestTokenizacion.test_decimal_en_modo_compacto_no_es_valido) ... ok
+test_el_mas_siempre_es_operador (pruebas.TestTokenizacion.test_el_mas_siempre_es_operador) ... ok
+test_expresion_vacia (pruebas.TestTokenizacion.test_expresion_vacia) ... ok
+test_minus_unario_se_une_al_numero (pruebas.TestTokenizacion.test_minus_unario_se_une_al_numero) ... ok
+test_modo_compacto_cada_caracter_es_token (pruebas.TestTokenizacion.test_modo_compacto_cada_caracter_es_token) ... ok
+test_modo_con_espacios_admite_varios_caracteres (pruebas.TestTokenizacion.test_modo_con_espacios_admite_varios_caracteres) ... ok
+test_modo_tokenizacion (pruebas.TestTokenizacion.test_modo_tokenizacion) ... ok
+test_numeros_se_normalizan (pruebas.TestTokenizacion.test_numeros_se_normalizan) ... ok
+test_division_por_cero (pruebas.TestValidacion.test_division_por_cero) ... ok
+test_expresion_incompleta (pruebas.TestValidacion.test_expresion_incompleta) ... ok
+test_expresion_postfija_con_falta_de_operandos (pruebas.TestValidacion.test_expresion_postfija_con_falta_de_operandos) ... ok
+test_expresion_postfija_incompleta (pruebas.TestValidacion.test_expresion_postfija_incompleta) ... ok
+test_expresion_prefija_incompleta (pruebas.TestValidacion.test_expresion_prefija_incompleta) ... ok
+test_expresiones_validas_no_lanzan_error (pruebas.TestValidacion.test_expresiones_validas_no_lanzan_error) ... ok
+test_falta_cerrar_parentesis (pruebas.TestValidacion.test_falta_cerrar_parentesis) ... ok
+test_falta_operador_antes_del_parentesis (pruebas.TestValidacion.test_falta_operador_antes_del_parentesis) ... ok
+test_falta_operador_entre_operandos (pruebas.TestValidacion.test_falta_operador_entre_operandos) ... ok
+test_modulo_por_cero (pruebas.TestValidacion.test_modulo_por_cero) ... ok
+test_operador_sin_operando_izquierdo (pruebas.TestValidacion.test_operador_sin_operando_izquierdo) ... ok
+test_parentesis_de_cierre_sin_apertura (pruebas.TestValidacion.test_parentesis_de_cierre_sin_apertura) ... ok
+test_parentesis_en_notacion_polaca (pruebas.TestValidacion.test_parentesis_en_notacion_polaca) ... ok
+test_parentesis_vacio (pruebas.TestValidacion.test_parentesis_vacio) ... ok
+test_simbolos_no_numericos_no_se_pueden_evaluar (pruebas.TestValidacion.test_simbolos_no_numericos_no_se_pueden_evaluar) ... ok
+test_sugerencia_cuando_la_notacion_esta_cambiada (pruebas.TestValidacion.test_sugerencia_cuando_la_notacion_esta_cambiada) ... ok
+test_asociatividad_derecha_de_la_potencia (pruebas.TestConversiones.test_asociatividad_derecha_de_la_potencia) ... ok
+test_asociatividad_izquierda (pruebas.TestConversiones.test_asociatividad_izquierda) ... ok
+test_ejemplos_del_taller (pruebas.TestConversiones.test_ejemplos_del_taller) ... ok
+test_la_traza_documenta_el_uso_de_la_pila (pruebas.TestConversiones.test_la_traza_documenta_el_uso_de_la_pila) ... ok
+test_precedencia_y_parentesis (pruebas.TestConversiones.test_precedencia_y_parentesis) ... ok
+test_prefijos (pruebas.TestConversiones.test_prefijos) ... ok
+test_tokens_y_presentacion (pruebas.TestConversiones.test_tokens_y_presentacion) ... ok
+test_ejemplo_del_taller (pruebas.TestEvaluacionPostfija.test_ejemplo_del_taller)
+23+4* se lee dígito a dígito: (2+3)*4 = 20. ... ok
+test_expresiones_con_espacios (pruebas.TestEvaluacionPostfija.test_expresiones_con_espacios) ... ok
+test_la_traza_muestra_la_pila (pruebas.TestEvaluacionPostfija.test_la_traza_muestra_la_pila) ... ok
+test_operandos_negativos (pruebas.TestEvaluacionPostfija.test_operandos_negativos) ... ok
+test_un_solo_operando (pruebas.TestEvaluacionPostfija.test_un_solo_operando) ... ok
+test_ejemplo_del_taller (pruebas.TestEvaluacionPrefija.test_ejemplo_del_taller) ... ok
+test_expresiones_con_espacios (pruebas.TestEvaluacionPrefija.test_expresiones_con_espacios) ... ok
+test_un_solo_operando (pruebas.TestEvaluacionPrefija.test_un_solo_operando) ... ok
+test_conversion_y_evaluacion_coinciden_con_eval (pruebas.TestConsistencia.test_conversion_y_evaluacion_coinciden_con_eval) ... ok
+test_es_infija_valida (pruebas.TestConsistencia.test_es_infija_valida) ... ok
+test_evaluar_la_conversion_de_un_ejemplo_del_taller (pruebas.TestConsistencia.test_evaluar_la_conversion_de_un_ejemplo_del_taller) ... ok
+test_notacion_polaca_detecta_la_notacion (pruebas.TestConsistencia.test_notacion_polaca_detecta_la_notacion) ... ok
+test_conversion_actualiza_los_resultados (pruebas.TestInterfazGrafica.test_conversion_actualiza_los_resultados) ... ok
+test_error_de_calculo_no_sugiere_cambiar_de_notacion (pruebas.TestInterfazGrafica.test_error_de_calculo_no_sugiere_cambiar_de_notacion)
+Regresión: '5 0 /' YA está en postfija; el error es la división. ... ok
+test_error_de_sintaxis_se_reporta_como_sintaxis (pruebas.TestInterfazGrafica.test_error_de_sintaxis_se_reporta_como_sintaxis) ... ok
+test_evaluacion_postfija_del_taller (pruebas.TestInterfazGrafica.test_evaluacion_postfija_del_taller) ... ok
+test_evaluacion_prefija_del_taller (pruebas.TestInterfazGrafica.test_evaluacion_prefija_del_taller) ... ok
+test_limpiar_deja_la_ventana_en_estado_inicial (pruebas.TestInterfazGrafica.test_limpiar_deja_la_ventana_en_estado_inicial) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 1.681s
+
+OK
+----------------------------------------------------------------------
+Pruebas ejecutadas : 59
+Errores            : 0
+Fallos             : 0
+Omitidas           : 0
+Resultado          : TODAS LAS PRUEBAS PASARON
+======================================================================
+
+Código de salida de las pruebas: 0 (éxito)

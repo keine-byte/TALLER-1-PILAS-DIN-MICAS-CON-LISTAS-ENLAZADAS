@@ -1,0 +1,18 @@
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Configuracion de editores / sistema operativo
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Archivos temporales de las pruebas y capturas
+demo_tmp.txt
